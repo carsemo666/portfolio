@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Administrador de Tareas</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Administrador de Tareas</h1>
+    <a href="/add">Añadir Nueva Tarea</a>
+    <ul>
+      {% for tarea in tareas %}
+      <!-- tareas es el nombre de la variable que se le pasa a la plantilla -->
+      <li>
+        <strong>{{ tarea.titulo }}</strong> - {{ tarea.descripcion }}
+        <a href="/edit/{{ tarea.id }}">Editar</a>
+        <a href="/delete/{{ tarea.id }}">Eliminar</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

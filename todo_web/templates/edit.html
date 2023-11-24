@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Tarea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Editar Tarea</h1>
+    {% if tarea %}
+        <form method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" value="{{ tarea.titulo }}" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" value="{{ tarea.descripcion }}">
+            <button type="submit">Actualizar</button>
+        </form>
+    {% else %}
+        <p>Tarea no encontrada.</p>
+    {% endif %}
+    <a href="/">Volver</a>
+</body>
+</html>

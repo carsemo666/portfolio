@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Añadir Tarea</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1 id="tit1">Añadir Nueva Tarea</h1>
+    <div id="formulario">
+      <form method="post">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required />
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" />
+        <button type="submit">Añadir</button>
+      </form>
+    </div>
+    <a href="/">Volver</a>
+  </body>
+</html>
